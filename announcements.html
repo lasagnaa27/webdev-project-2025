@@ -1,0 +1,54 @@
+<div class="announcements-wrapper">
+
+  <div class="controls-bar">
+    <div class="filters" id="announcement-filters">
+    </div>
+    <button class="btn-primary" onclick="openModal()">
+      <i data-lucide="plus"></i> Create Announcement
+    </button>
+  </div>
+
+  <div id="announcements-list" class="list-container">
+  </div>
+
+</div>
+
+<div id="announcement-modal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>New Announcement</h3>
+      <button onclick="closeModal()" class="close-btn">&times;</button>
+    </div>
+
+    <form id="add-form" onsubmit="saveAnnouncement(event)">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="title" required placeholder="Ex: Barangay Assembly">
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select id="category">
+          <option value="Community Events">Community Events</option>
+          <option value="Health Services">Health Services</option>
+          <option value="Advisory">Advisory</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="desc" rows="3" required></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" onclick="closeModal()" class="btn-cancel">Cancel</button>
+        <button type="submit" class="btn-primary">Post Announcement</button>
+      </div>
+    </form>
+  </div>
+</div>

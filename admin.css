@@ -1,0 +1,39 @@
+/* GLOBAL RESETS */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f3f4f6; color: #333; height: 100vh; overflow: hidden; }
+
+/* LAYOUT */
+.app-container { display: flex; height: 100%; }
+
+/* SIDEBAR */
+.sidebar { width: 260px; background-color: #1e293b; color: white; display: flex; flex-direction: column; flex-shrink: 0; }
+.sidebar-header { height: 64px; display: flex; align-items: center; padding: 0 1.5rem; background-color: #0f172a; border-bottom: 1px solid #334155; gap: 12px; }
+.logo-box { width: 32px; height: 32px; background-color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; }
+.logo-text { display: flex; flex-direction: column; }
+.brand { font-size: 0.9rem; font-weight: bold; }
+.sub-brand { font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; }
+
+.sidebar-nav { padding: 1.5rem 0.75rem; flex: 1; }
+.nav-link { display: flex; align-items: center; padding: 0.75rem 1rem; color: #cbd5e1; text-decoration: none; border-radius: 8px; margin-bottom: 0.5rem; transition: 0.2s; font-size: 0.9rem; }
+.nav-link i { width: 20px; height: 20px; margin-right: 12px; }
+.nav-link:hover { background-color: #334155; color: white; }
+.nav-link.active { background-color: #2563eb; color: white; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); }
+
+.sidebar-footer { padding: 1rem; border-top: 1px solid #334155; text-align: center; font-size: 0.75rem; color: #64748b; }
+
+/* MAIN CONTENT WRAPPER */
+.main-wrapper { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+/* TOP HEADER */
+.top-header { height: 64px; background-color: white; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
+.top-header h1 { font-size: 1.25rem; font-weight: 600; color: #1f2937; }
+
+.user-profile { display: flex; align-items: center; gap: 12px; }
+.user-info { text-align: right; }
+.user-name { display: block; font-size: 0.875rem; font-weight: 600; color: #111827; }
+.user-role { display: block; font-size: 0.75rem; color: #6b7280; }
+.user-avatar { width: 36px; height: 36px; background-color: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid #d1d5db; color: #6b7280; }
+.user-avatar i { width: 20px; height: 20px; }
+
+/* CONTENT AREA */
+#content-area { flex: 1; overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; }

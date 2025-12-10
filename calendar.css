@@ -1,0 +1,93 @@
+/* Layout */
+.calendar-layout {
+    height: 100%; display: flex; gap: 0;
+    background: white; border-radius: 12px; border: 1px solid #e5e7eb; overflow: hidden; position: relative;
+}
+.calendar-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+/* Header & Grid (Existing Styles) */
+.cal-header {
+    background-color: #3b82f6; color: white; padding: 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.nav-btn { background: none; border: none; color: white; cursor: pointer; padding: 4px; border-radius: 4px; }
+.nav-btn:hover { background-color: rgba(255,255,255,0.2); }
+
+.cal-weekdays {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    background: #f9fafb; border-bottom: 1px solid #e5e7eb;
+}
+.cal-weekdays div { padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; color: #9ca3af; text-transform: uppercase; }
+
+.cal-grid { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); overflow-y: auto; }
+.cal-cell {
+    border-right: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6;
+    min-height: 100px; padding: 8px; position: relative; cursor: pointer;
+}
+.cal-cell:hover { background-color: #f8fafc; }
+.cal-cell.active-day { background-color: #eff6ff; box-shadow: inset 0 0 0 2px #3b82f6; }
+
+.cal-num { font-size: 0.8rem; font-weight: 500; color: #64748b; margin-bottom: 4px; display: inline-block; width: 24px; text-align: center; }
+.cal-cell.active-day .cal-num { background-color: #3b82f6; color: white; border-radius: 50%; }
+
+.cal-event {
+    font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;
+    color: white; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bg-blue { background-color: #3b82f6; }
+.bg-green { background-color: #22c55e; }
+.bg-red { background-color: #ef4444; }
+.bg-purple { background-color: #a855f7; }
+.bg-orange { background-color: #f97316; }
+
+.cal-legend { padding: 1rem; border-top: 1px solid #e5e7eb; display: flex; gap: 16px; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #4b5563; }
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.blue { background: #3b82f6; }
+.dot.green { background: #22c55e; }
+.dot.red { background: #ef4444; }
+
+/* --- SIDEBAR STYLES (NEW) --- */
+.cal-sidebar {
+    width: 0; opacity: 0; overflow: hidden;
+    border-left: 1px solid #e5e7eb; background: white;
+    display: flex; flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cal-sidebar.open { width: 320px; opacity: 1; }
+
+.sidebar-header-green {
+    background-color: #22c55e; color: white; padding: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.sidebar-header-green h3 { font-size: 1.1rem; font-weight: 600; margin: 0; }
+.close-btn { background: none; border: none; color: white; cursor: pointer; }
+.close-btn:hover { color: #dcfce7; }
+
+.sidebar-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; flex: 1; }
+.form-group label { display: block; font-size: 0.75rem; font-weight: bold; color: #9ca3af; margin-bottom: 0.5rem; }
+.date-display-box {
+    background: #f9fafb; padding: 0.75rem; border-radius: 8px; border: 1px solid #e5e7eb;
+    color: #374151; font-size: 0.9rem;
+}
+input[type="text"] {
+    width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 8px; outline: none;
+    font-size: 0.9rem;
+}
+input[type="text"]:focus { border-color: #22c55e; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.1); }
+
+.color-options { display: flex; gap: 10px; }
+.color-btn { width: 36px; height: 36px; border-radius: 8px; border: none; cursor: pointer; transition: transform 0.1s; }
+.color-btn:hover { transform: scale(1.1); }
+.color-btn.selected { ring: 2px solid #9ca3af; transform: scale(1.1); box-shadow: 0 0 0 2px #d1d5db; }
+.color-btn.blue { background-color: #3b82f6; }
+.color-btn.green { background-color: #22c55e; }
+.color-btn.red { background-color: #ef4444; }
+.color-btn.purple { background-color: #a855f7; }
+.color-btn.orange { background-color: #f97316; }
+
+.add-event-btn {
+    margin-top: auto; width: 100%; padding: 12px; background-color: #111827; color: white;
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+}
+.add-event-btn:hover { background-color: #374151; }

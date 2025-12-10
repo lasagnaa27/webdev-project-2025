@@ -1,0 +1,60 @@
+<div class="officials-layout">
+  <div class="officials-header-bar">
+    <div class="header-text">
+      <h2>Barangay Officials</h2>
+      <p class="subtitle">Manage the list of elected and appointed officials.</p>
+    </div>
+    <button class="btn-add-official" onclick="openOfficialSidebar()">
+      <i data-lucide="user-plus"></i> Add Official
+    </button>
+  </div>
+
+  <div id="officials-grid" class="officials-grid">
+  </div>
+
+  <div id="official-sidebar" class="official-sidebar">
+    <div class="sidebar-header">
+      <h3>New Official</h3>
+      <button onclick="closeOfficialSidebar()" class="close-btn"><i data-lucide="x"></i></button>
+    </div>
+
+    <div class="sidebar-body">
+      <div class="form-group">
+        <label>FULL NAME</label>
+        <input type="text" id="off-name" placeholder="e.g. Juan Dela Cruz">
+      </div>
+
+      <div class="form-group">
+        <label>POSITION</label>
+        <select id="off-position">
+          <option value="Captain">Barangay Captain</option>
+          <option value="Kagawad">Kagawad</option>
+          <option value="Secretary">Secretary</option>
+          <option value="Treasurer">Treasurer</option>
+          <option value="SK Chairman">SK Chairman</option>
+          <option value="Tanod">Barangay Tanod</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>COMMITTEE (Optional)</label>
+        <input type="text" id="off-committee" placeholder="e.g. Committee on Health">
+      </div>
+
+      <div class="form-group">
+        <label>CONTACT NUMBER</label>
+        <input type="text" id="off-contact" placeholder="0912 345 6789">
+      </div>
+
+      <div class="form-group">
+        <label>STATUS</label>
+        <div class="status-options">
+          <button class="status-btn active selected" onclick="setStatus('Active')" id="btn-active">Active</button>
+          <button class="status-btn inactive" onclick="setStatus('Inactive')" id="btn-inactive">Inactive</button>
+        </div>
+      </div>
+
+      <button onclick="addOfficial()" class="save-btn">Save Official</button>
+    </div>
+  </div>
+</div>
